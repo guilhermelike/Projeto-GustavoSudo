@@ -62,6 +62,10 @@ header nav.desktop-menu li a{
 
 }
 
+header nav.desktop-menu li a:hover{
+    color: #949BFF;
+}
+
 .sessao1{
     background-image: url(../img/tudo-o-que-voce-precisa-saber-sobre-advogado-de-inventario.jpeg);
     background-size: cover;
