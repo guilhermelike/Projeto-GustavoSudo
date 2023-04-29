@@ -23,12 +23,16 @@ header{
     height: 120px;
     background-color: #12153F;
     padding: 40px 2%;
-    z-index: 1;
     font-weight: 300;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 1000;
 }
 
 header nav{
     float: right;
+    z-index: 99;
 }
 
 
@@ -44,6 +48,7 @@ header .logo{
 
 .desktop-menu{
     margin-top: 10px;
+    z-index: 99;
 }
 
 
@@ -59,16 +64,187 @@ header nav.desktop-menu li{
 header nav.desktop-menu li a{
     color: #e2c5a0;
     text-decoration: none;
+    position: relative;
+    font-size: 20px;
 
 }
 
-header nav.desktop-menu li a:hover{
-    color: #949BFF;
+header nav.desktop-menu li a:before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        bottom: -3px;
+        left: 0;
+        background-image: linear-gradient(90deg, #2adaf9, rgb(0, 72, 255));
+        background-repeat: no-repeat;
+        background-size: 100% 3px;
+        visibility: hidden;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+}
+
+header nav.desktop-menu li a:hover:before{
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.main{
+    margin-top: 120px;
+    width: 100%;
+    z-index: 6;
 }
 
 
-/* FOOTER */
+.flex-mosaico{
+    display: flex;
+}
 
+.item-1-mosaico{
+    background-position: center;
+    background-size: cover;
+    width: 60%;
+}
+
+.item-2-mosaico{
+    background-color: #e2c5a0;
+    width: 40%;
+    padding: 90px 40px;
+}
+
+.demo-wrap {
+    overflow: hidden;
+    position: relative;
+    height: 602px;
+    width: 100%;
+
+  }
+  
+  .demo-bg {
+    filter: brightness(50%);
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    animation-duration: 3s;
+  animation-name: slidein;
+  }
+
+  @keyframes slidein {
+    from {
+      opacity: 89%;
+    }
+  
+    to {
+      opacity: 100%;
+    }
+  }
+
+  .sessao1{
+    height: 100%;
+    width: 100%;
+
+  }
+
+  .icone-seta{
+    position: absolute;
+    left: 50%;
+    margin-top: -22px;
+    transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background-size: 100% 100%;
+    background-image: url('../img/arrow.png');
+}
+
+  
+  .demo-content {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    align-items: center;
+    top: 40%;
+  }
+
+.demo-content > p{
+    font-size: 80px;
+    color: #e2c5a0;
+    font-family: 'Playfair Display', serif;
+
+}
+
+.section{
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.section{
+	text-align: center;
+}
+
+.single{
+	float: left;
+	width: 33.3%;
+	padding: 30px;
+}
+
+.single img{
+	width: 70px;
+    margin-left: 18px;
+    margin-bottom: 10px;
+}
+
+.single p{
+	display: inline-block;
+	padding: 10px 25px;
+	text-align: justify;
+    font-size: 10px;
+    font-weight: 100;
+    
+}
+
+.single h3{
+    font-size: 19px;
+    display: inline-block;
+    padding: 10px 25px;
+    text-align: center;
+    color: black;
+    font-weight: 100;
+}
+
+.single h4{
+    font-size: 19px;
+    display: inline-block;
+    padding: 10px 25px;
+    text-align: center;
+    color: black;
+    font-weight: 100;
+}
+
+.chamada{
+    text-align: justify;
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.chamada p{
+    font-size: 23px;
+}
+
+#onde{
+    font-family: 'Playfair Display', serif;
+}
+
+
+/* FOOTER  */
 .footer-distributed{
 	background: #12153F;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
@@ -234,31 +410,87 @@ header nav.desktop-menu li a:hover{
 
 /* MEDIA QUERYS */
 
-@media screen and (max-width: 849px){
+@media screen and (max-width: 831px){
+    .section{
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    .text-single{
+        text-align: center;
+        margin: 2px;
+        display: inline-block;
+    }
+
+    .single img{
+        align-items: center;
+        margin-left: 45px;
+    }
+
+    .demo-content p{
+        font-size: 55px;
+    }
+}
+
+@media screen and (max-width: 830){
+    .sessao1{
+        display: block;
+    }
+
+    .section{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        height: 100%;
+    }
+
+    .text-single{
+        text-align: center;
+        margin: 2px;
+        display: inline-block;
+    }
+
+    .single{
+        padding: 0;
+        width: 49%;
+    }
+
+    .single img{
+        align-items: center;
+        margin-left: 30px;
+    }
+}
+
+@media screen and (max-width: 848px){
 
     header{
         width: 100%;
         height: auto;
         min-height: 120px;
         padding: 40px 2%;
-        z-index: 1;
+        z-index: 999;
     }
 
     .logo{
         align-items: center;
         margin-left: 200px;
+
     }
 
     .desktop-menu{
         text-align: center;
         float: left;
-        margin-left: 140px;
+        margin-left: 190px;
+        z-index: 99;
     }
 
     .footer-distributed{
         text-align: center;
         align-items: center;
         margin: 0 auto;
+    }
+
+    #texto-alterar{
+        margin-left: -25px;
     }
 
     .footer-center{
@@ -274,26 +506,40 @@ header nav.desktop-menu li a:hover{
 @media screen and (max-width:767px){
     .logo{
         align-items: center;
-        margin-left: 130px;
-    }
-
-    .desktop-menu{
-        text-align: center;
-        float: left;
-        margin-left: 60px;
-    }
-}
-
-@media screen and (max-width:535px){
-    .logo{
-        align-items: center;
         margin-left: 90px;
     }
 
     .desktop-menu{
         text-align: center;
         float: left;
-        margin-left: 30px;
+        margin-left: 80px;
+        z-index: 99;
+    }
+
+    #texto-alterar{
+        margin-left: -45px;
+    }
+}
+
+@media screen and (max-width:535px){
+    .logo{
+        align-items: center;
+        margin-left: 70px;
+    }
+
+    .desktop-menu{
+        text-align: center;
+        float: left;
+        margin-left: 60px;
+        z-index: 99;
+    }
+
+    .demo-wrap{
+        height: 580px;
+        }
+
+    #texto-alterar{
+        margin-left: -45px;
     }
 }
 
@@ -318,29 +564,22 @@ header nav.desktop-menu li a:hover{
 
 }
 
-@media (max-width: 849px) {
-    .form {
-        grid-template-columns: 1fr
+
+@media screen and (max-width:768px){
+
+    .flex-mosaico{
+        display: block;
     }
 
-    header{
+    .item-1-mosaico{
+        padding-top: 80%;
         width: 100%;
-        height: auto;
-        min-height: 120px;
-        padding: 40px 2%;
-        z-index: 1;
     }
 
-    .logo{
-        align-items: center;
-        margin-left: 100px;
+    .item-2-mosaico{
+        text-align: justify;
+        width: 100%;
     }
-
-    .desktop-menu{
-        text-align: center;
-        float: left;
-        margin-left: 40px;
-    }
-
 }
+
 
